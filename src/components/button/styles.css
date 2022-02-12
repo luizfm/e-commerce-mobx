@@ -1,0 +1,25 @@
+.button {
+  outline: none;
+  padding: 1.2rem 1.6rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* BUTTON THEMES */
+
+.transparent {
+  border: none;
+  background-color: transparent;
+}
+
+.yellow {
+  background-color: #ffbd44;
+  color: white;
+}
