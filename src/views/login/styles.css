@@ -1,0 +1,37 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--background);
+
+  .login-card {
+    width: 48rem;
+    background-color: white;
+    padding: 3.2rem;
+    border-radius: 0.8rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: var(--gray-80);
+
+    .title {
+      font-size: 3.2rem;
+      line-height: 4rem;
+      color: var(--gray-100);
+      margin-bottom: 0.8rem;
+    }
+
+    .description {
+      margin-bottom: 2.4rem;
+    }
+
+    .email-input {
+      margin-bottom: 2.4rem;
+    }
+
+    .login-button {
+      margin-top: 4.8rem;
+    }
+  }
+}

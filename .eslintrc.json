@@ -5,9 +5,11 @@
     },
     "extends": [
         "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
         "plugin:prettier/recommended",
         "airbnb"
     ],
+    "parser": "@babel/eslint-parser",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -24,6 +26,13 @@
         "prettier/prettier": "error",
         "import/no-unresolved": "off",
         "no-unused-vars": "off",
+        "react/jsx-props-no-spreading": "off",
+        "object-curly-newline": "off",
+        "no-confusing-arrow": "off",
+        "comma-dangle": "off",
+        "react/button-has-type": "off",
+        "implicit-arrow-linebreak": "off",
+        "operator-linebreak": "off",
         "semi": "off",
         "indent": [2, 2, {"SwitchCase": 1}],
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]

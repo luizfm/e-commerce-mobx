@@ -4,15 +4,25 @@ import {
   Routes as Switch,
   Route,
 } from 'react-router-dom'
+import Login from '_views/login'
 
+import StoreProvider from '_store/'
+
+import Dashboard from '_views/dashboard'
 import App from '../App'
 
 const Routes = () => (
-  <Router>
-    <Switch>
-      <Route path="/" element={<App />} />
-    </Switch>
-  </Router>
+  <StoreProvider>
+    <Router>
+      <Switch>
+        <Route path="/" element={<App />}>
+          <Route path="dashboard" element={<Dashboard />} />
+        </Route>
+        <Route path="/login" element={<Login />} />
+
+      </Switch>
+    </Router>
+  </StoreProvider>
 )
 
 export default Routes

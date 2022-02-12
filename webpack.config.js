@@ -76,6 +76,7 @@ module.exports = {
       _utils: path.resolve(__dirname, 'src/utils'),
       _hooks: path.resolve(__dirname, 'src/hooks'),
       _services: path.resolve(__dirname, 'src/services'),
+      _store: path.resolve(__dirname, 'src/store'),
     },
   },
   plugins: [htmlPlugin, miniCssPlugin],
