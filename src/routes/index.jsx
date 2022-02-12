@@ -10,6 +10,7 @@ import StoreProvider from '_store/'
 
 import Dashboard from '_views/dashboard'
 import App from '../App'
+import SignUp from '_views/sign-up'
 
 const Routes = () => (
   <StoreProvider>
@@ -19,7 +20,7 @@ const Routes = () => (
           <Route path="dashboard" element={<Dashboard />} />
         </Route>
         <Route path="/login" element={<Login />} />
-
+        <Route path="sign-up" element={<SignUp />} />
       </Switch>
     </Router>
   </StoreProvider>

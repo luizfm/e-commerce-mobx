@@ -1,4 +1,5 @@
 import cookies from 'react-cookies'
+import { StoreContext } from '_store'
 
 /* eslint-disable prettier/prettier */
 export const login =
@@ -17,6 +18,22 @@ export const login =
 
     return store.updateUser({ email, accessToken })
   }
+
+export const signUp = ({ email, accessToken, ...payload }) => (store) => {
+  cookies.save('accessToken', accessToken, {
+    maxAge: 60 * 24 * 24,
+    secure: true,
+    path: '/'
+  })
+
+  cookies.save('email', email, {
+    maxAge: 60 * 24 * 24,
+    secure: true,
+    path: '/'
+  })
+
+  return store.updateUser({ email, accessToken })
+}
 
 export const logout = () => (store) =>
   store.updateUser({ email: '', accessToken: '' })

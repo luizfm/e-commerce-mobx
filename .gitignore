@@ -4,3 +4,7 @@ node_modules
 .env
 .env.local
 .end.development
+
+//
+yarn.lock
+package-lock.json
