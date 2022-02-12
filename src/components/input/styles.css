@@ -20,6 +20,10 @@
     height: 5rem;
     align-items: center;
 
+    &.input-error {
+      border-color: var(--red-error);
+    }
+
     .input {
       flex: 1;
       border: none;
@@ -42,6 +46,13 @@
       width: 2.4rem;
       fill: var(--gray-24);
     }
+  }
+
+  .error-message {
+    margin-top: 0.4rem;
+    color: var(--red-error);
+    font-size: 1.2rem;
+    line-height: 1.6rem;
   }
 }
 

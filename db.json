@@ -4,6 +4,34 @@
       "email": "carolina@jungledevs.com",
       "password": "$2a$10$iCnqd5EfhbQrj7nc0TILj.7f68y7w.rsPgN6xf2Cyen/wOceDqjvK",
       "id": 1
+    },
+    {
+      "email": "luiz.teste@gmail.com",
+      "password": "$2a$10$sgUSgOIiNzc4T1FZXT80searyla15tMgEp9sGaSVg3XXqkVq6koC.",
+      "name": "Luiz",
+      "confirmPassword": "12345678",
+      "id": 2
+    },
+    {
+      "email": "luiz.teste@gmail.comm",
+      "password": "$2a$10$M.9T0KES42duyzlQWAlLNOycr5LacpDFpakm98.Lmfml2VhO3um86",
+      "name": "Luiz",
+      "confirmPassword": "1234",
+      "id": 3
+    },
+    {
+      "email": "luiz@gmail.com",
+      "password": "$2a$10$QHuEQPhTBo913K79Z6rGNuTRMW.QRuy7EpCuPoX7/D4j.RaRsgCrG",
+      "name": "teste",
+      "confirmPassword": "1234",
+      "id": 4
+    },
+    {
+      "email": "luiz.ado@hotmail.com",
+      "password": "$2a$10$cFKK.QMuUOAgqiYzzVIaUehILrqrqWhPqj6hJS77bgGVB53OS6oI6",
+      "name": "Luiz Fernando de Morais",
+      "confirmPassword": "12345678",
+      "id": 5
     }
   ]
 }

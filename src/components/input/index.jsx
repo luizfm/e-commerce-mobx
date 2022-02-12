@@ -23,6 +23,7 @@ export default function Input({
   icon,
   type,
   className,
+  error,
   ...inputProps
 }) {
   const [isPasswordVisible, onTogglePassword] = useToggle()
@@ -50,7 +51,11 @@ export default function Input({
       >
         {label}
       </label>
-      <div className={styles['input-wrapper']}>
+      <div
+        className={classnames(styles['input-wrapper'], {
+          [styles['input-error']]: !!error,
+        })}
+      >
         <input
           id={id}
           type={handleInputType}
@@ -67,6 +72,7 @@ export default function Input({
           </Button>
         )}
       </div>
+      {!!error && <span className={styles['error-message']}>{error}</span>}
     </div>
   )
 }
@@ -77,6 +83,7 @@ Input.propTypes = {
   hiddenLabel: PropTypes.bool,
   type: PropTypes.oneOf(Object.values(INPUT_TYPES)),
   icon: svgShape,
+  error: PropTypes.string,
   className: PropTypes.string,
 }
 
@@ -85,4 +92,5 @@ Input.defaultProps = {
   hiddenLabel: false,
   icon: '',
   className: '',
+  error: '',
 }
