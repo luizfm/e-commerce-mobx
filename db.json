@@ -40,98 +40,136 @@
       "name": "Smart TV 55' 4k Black",
       "category": "electronics",
       "price": 2000.00,
-      "stock": 14
+      "stock": 14,
+      "image": "https://www.manualpdf.com.br/thumbs/products/l/1397298-lg-55um7520psb.jpg"
     },
     {
       "id": 2,
       "name": "Smart TV 70' 4k Black",
       "category": "electronics",
       "price": 4000.00,
-      "stock": 4
+      "stock": 4,
+      "image": "https://www.manualpdf.com.br/thumbs/products/l/1397298-lg-55um7520psb.jpg"
     },
     {
       "id": 3,
       "name": "Smart TV 42' 4k Black",
       "category": "electronics",
       "price": 1000.00,
-      "stock": 7
+      "stock": 7,
+      "image": "https://www.manualpdf.com.br/thumbs/products/l/1397298-lg-55um7520psb.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Smart TV 48' 4k Black",
+      "category": "electronics",
+      "price": 1750.00,
+      "stock": 14,
+      "image": "https://www.manualpdf.com.br/thumbs/products/l/1397298-lg-55um7520psb.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Smart TV 58' 4k Black",
+      "category": "electronics",
+      "price": 2200.00,
+      "stock": 14,
+      "image": "https://www.manualpdf.com.br/thumbs/products/l/1397298-lg-55um7520psb.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Smart TV 80' 4k Black",
+      "category": "electronics",
+      "price": 7000.00,
+      "stock": 14,
+      "image": "https://www.manualpdf.com.br/thumbs/products/l/1397298-lg-55um7520psb.jpg"
     },
     {
       "id": 4,
       "name": "Italian Modern Wooden Chair",
       "category": "furniture",
       "price": 100.00,
-      "stock": 100
+      "stock": 100,
+      "image": "https://i.pinimg.com/originals/10/81/b5/1081b5662a1de79542439096b706dc2c.jpg"
     },
     {
       "id": 5,
       "name": "Italian Modern Wooden Table",
       "category": "furniture",
       "price": 350.00,
-      "stock": 40
+      "stock": 40,
+      "image": "https://www.italydreamdesign.com/wp-content/uploads/tavolo-rettangolare-metallo-e-legno-rectnagular-table-wood-and-metal-table-rectangulaire-en-verre-et-metal.jpg"
     },
     {
       "id": 14,
       "name": "T Shirt Resident Evil",
       "category": "clothes",
       "price": 100.00,
-      "stock": 200
+      "stock": 200,
+      "image": "https://cdn.myshoptet.com/usr/www.gamlery.com/user/shop/big/9297_ts281682res.jpg?609a54a9"
     },
     {
       "id": 6,
       "name": "Resident Evil Black Pants",
       "category": "clothes",
       "price": 180.00,
-      "stock": 150
+      "stock": 150,
+      "image": "https://canary.contestimg.wish.com/api/webimage/5c7ebf1edfd32b26cf2d0fde-large.jpg?cache_buster=00c932609c62411c9a5176a3780203e8"
     },
     {
       "id": 7,
       "name": "PS5 Pro White + 2 Controllers + 2 games",
       "category": "games",
       "price": 4000.00,
-      "stock": 30
+      "stock": 30,
+      "image": "https://www.kabum.com.br/hotsite/playstation5/img/console-playstation5.png"
     },
     {
       "id": 8,
-      "name": "Uncharted 6 - A Thief reborn",
+      "name": "Uncharted 4 - A Thief's end",
       "category": "games",
       "price": 50.00,
-      "stock": 200
+      "stock": 200,
+      "image": "https://igroteka.club/image/cache/catalog/Serega/cupit_disc_Uncharted_4_put_vora_ps_4_ukraina-700x760.jpg"
     },
     {
       "id": 9,
-      "name": "FIFA 80 - Special Edition",
+      "name": "FIFA 22 - Special Edition",
       "category": "games",
       "price": 40.00,
-      "stock": 100
+      "stock": 100,
+      "image": "https://www.extra-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=202578138"
     },
     {
       "id": 10,
       "name": "Clean code: A handbook of agile software craftsmanship",
       "category": "books",
       "price": 20.00,
-      "stock": 1000
+      "stock": 1000,
+      "image": "https://5.imimg.com/data5/WZ/NH/HL/SELLER-99655515/clean-code-a-handbook-of-agile-software-craftsmanship-book-500x500.jpg"
     },
     {
       "id": 11,
       "name": "Learning JavaScript Data Structures and Algorithms - Third Edition: Write complex and powerful JavaScript code using the latest ECMAScript",
       "category": "books",
       "price": 20.00,
-      "stock": 1000
+      "stock": 1000,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy36fNDsHcS80XJ7QFcniOzKe44XNNd2z6tEhqP9gYnWQhLs-PLNCI8Lblgc_uTpbUXCU&usqp=CAU"
     },
     {
       "id": 12,
       "name": "Smart Watch",
       "category": "accessories",
       "price": 80.00,
-      "stock": 400
+      "stock": 400,
+      "image": "https://a-static.mlcdn.com.br/1500x1500/relogio-smartwatch-inteligente-fitness-smart-bluetooth-bsn/bosan3/8562838839/c547bec00cf75308125d65b07b1d4e29.jpg"
     },
     {
       "id": 13,
       "name": "Earings Pretty Beauty",
       "category": "accessories",
       "price": 50.00,
-      "stock": 100
+      "stock": 100,
+      "image": "https://images-americanas.b2w.io/produtos/3331163656/imagens/love-dangles-earings-oco-para-fora-studs-fleshtunnel-gauge-plugs-maca-de-ouvido/3331163824_1_large.jpg"
     }
   ]
 }

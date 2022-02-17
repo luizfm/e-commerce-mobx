@@ -1,0 +1,31 @@
+.quantifier-container {
+  display: flex;
+  align-items: center;
+
+  .quantity-input {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: 0.1rem solid var(--gray-8);
+    border-radius: 0.4rem;
+    text-align: center;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}

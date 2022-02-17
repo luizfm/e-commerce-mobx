@@ -1,0 +1,45 @@
+.product-card-container {
+  width: 29rem;
+  text-align: center;
+  background-color: white;
+  padding: 2.4rem;
+  border-radius: 0.8rem;
+  height: 46rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12),
+    0 0.1rem 0.2rem rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  &:hover {
+    box-shadow: 0 1.4rem 2.8rem rgba(0, 0, 0, 0.25),
+      0 1rem 1rem rgba(0, 0, 0, 0.22);
+  }
+
+  .product-image {
+    width: 100%;
+    object-fit: cover;
+    height: 20rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .product-name {
+    font-size: 2rem;
+    line-height: 2.8rem;
+    flex: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre-line;
+  }
+
+  .price {
+    margin-bottom: 2.4rem;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+
+  .card-footer {
+    display: flex;
+    border-top: 0.1rem solid var(--gray-8);
+  }
+}

@@ -5,6 +5,8 @@ import { updateProductsList } from '_store/modules/product/actions'
 import api from '_services/api'
 
 import { observer } from 'mobx-react'
+import ProductCard from '_components/product-card'
+
 import styles from './styles.css'
 
 const ProductsCatalog = observer(() => {
@@ -15,6 +17,8 @@ const ProductsCatalog = observer(() => {
     () => location.pathname.slice(1),
     [location.pathname]
   )
+
+  const currentProductList = store.currentCategoryList(formattedPathName)
 
   const getProductsList = useCallback(async () => {
     const response = await api.get('/products', {
@@ -30,9 +34,15 @@ const ProductsCatalog = observer(() => {
 
   return (
     <main className={styles['products-catalog-container']}>
-      <div>
-        {store.currentCategoryList(formattedPathName).map((item) => (
-          <p key={item.id}>{item.name}</p>
+      <div className={styles['product-catalog-list']}>
+        {currentProductList.map((item) => (
+          <ProductCard
+            key={item.id}
+            name={item.name}
+            price={item.price}
+            stock={item.stock}
+            image={item.image}
+          />
         ))}
       </div>
     </main>
