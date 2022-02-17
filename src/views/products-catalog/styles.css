@@ -2,4 +2,14 @@
   background-color: var(--background);
   height: calc(100vh - 8rem);
   overflow-y: auto;
+  padding-bottom: 4.8rem;
+
+  .product-catalog-list {
+    max-width: 111.24rem;
+    margin: 0 auto;
+    margin-top: 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4.8rem;
+  }
 }

@@ -33,13 +33,22 @@ export default function Input({
     [isPasswordVisible]
   )
 
-  const handleInputType = useMemo(
-    () =>
-      type === INPUT_TYPES.TEXT || (INPUT_TYPES.PASSWORD && isPasswordVisible)
-        ? 'text'
-        : 'password',
-    [isPasswordVisible, type]
-  )
+  const handleInputType = useMemo(() => {
+    switch (type) {
+      case INPUT_TYPES.PASSWORD: {
+        if (isPasswordVisible) {
+          return 'text'
+        }
+
+        return 'password'
+      }
+      case INPUT_TYPES.TEXT: {
+        return 'text'
+      }
+      default:
+        return type
+    }
+  }, [isPasswordVisible, type])
 
   return (
     <div className={classnames(styles['input-container'], className)}>
