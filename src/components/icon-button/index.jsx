@@ -2,22 +2,35 @@ import React from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 
-import Svg from '../svg'
 import { svgShape } from '_utils/proptypes'
-import classNames from 'classnames'
 import { Link } from 'react-router-dom'
+import Svg from '../svg'
 
-const IconButton = ({ icon, className, to, iconClassName, ...buttonProps }) => {
-  if(to) {
+import styles from './styles.css'
+
+const IconButton = ({
+  icon,
+  className,
+  to,
+  state,
+  iconClassName,
+  ...buttonProps
+}) => {
+  if (to) {
     return (
-      <Link to={to} className={classNames(styles.button, className)} {...buttonProps}>
+      <Link
+        to={to}
+        state={state}
+        className={classnames(styles.button, className)}
+        {...buttonProps}
+      >
         <Svg icon={icon} className={iconClassName} />
       </Link>
     )
   }
 
   return (
-    <button className={classNames(styles.button, className)} {...buttonProps}>
+    <button className={classnames(styles.button, className)} {...buttonProps}>
       <Svg icon={icon} className={iconClassName} />
     </button>
   )
@@ -28,12 +41,14 @@ IconButton.propTypes = {
   className: PropTypes.string,
   iconClassName: PropTypes.string,
   to: PropTypes.string,
+  state: PropTypes.shape({}),
 }
 
 IconButton.defaultProps = {
   className: '',
   iconClassName: '',
-  to: ''
+  to: '',
+  state: {},
 }
 
 export default IconButton

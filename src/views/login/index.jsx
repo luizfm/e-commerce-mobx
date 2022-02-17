@@ -19,6 +19,8 @@ const Login = observer(() => {
   const store = useContext(StoreContext)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [emailError, setEmailError] = useState('')
+  const [passwordError, setPasswordError] = useState('')
   const navigate = useNavigate()
 
   const onChange = useCallback(({ target }) => {
@@ -41,7 +43,8 @@ const Login = observer(() => {
 
       navigate('/dashboard')
     } catch (err) {
-      console.log(err)
+      setEmailError('Email or password incorrect')
+      setPasswordError('Email or password incorrect')
     }
   }, [email, navigate, password, store])
 
@@ -61,6 +64,7 @@ const Login = observer(() => {
           id="email"
           name={INPUT_IDS.EMAIL}
           value={email}
+          error={emailError}
           onChange={onChange}
           label="Email"
         />
@@ -69,6 +73,7 @@ const Login = observer(() => {
           autoComplete="off"
           name={INPUT_IDS.PASSWORD}
           value={password}
+          error={passwordError}
           onChange={onChange}
           type={INPUT_TYPES.PASSWORD}
           label="Password"

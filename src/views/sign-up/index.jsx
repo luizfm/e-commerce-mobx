@@ -6,7 +6,6 @@ import Button, { BUTTON_THEME } from '_components/button'
 import Input, { INPUT_TYPES } from '_components/input'
 import { StoreContext } from '_store'
 import { signUp } from '_store/modules/user/actions'
-import emailValidator from '_utils/helpers'
 
 import { reducer, UPDATE_STATE, INITIAL_STATE } from './reducer'
 import styles from './styles.css'

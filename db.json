@@ -33,5 +33,105 @@
       "confirmPassword": "12345678",
       "id": 5
     }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Smart TV 55' 4k Black",
+      "category": "electronics",
+      "price": 2000.00,
+      "stock": 14
+    },
+    {
+      "id": 2,
+      "name": "Smart TV 70' 4k Black",
+      "category": "electronics",
+      "price": 4000.00,
+      "stock": 4
+    },
+    {
+      "id": 3,
+      "name": "Smart TV 42' 4k Black",
+      "category": "electronics",
+      "price": 1000.00,
+      "stock": 7
+    },
+    {
+      "id": 4,
+      "name": "Italian Modern Wooden Chair",
+      "category": "furniture",
+      "price": 100.00,
+      "stock": 100
+    },
+    {
+      "id": 5,
+      "name": "Italian Modern Wooden Table",
+      "category": "furniture",
+      "price": 350.00,
+      "stock": 40
+    },
+    {
+      "id": 14,
+      "name": "T Shirt Resident Evil",
+      "category": "clothes",
+      "price": 100.00,
+      "stock": 200
+    },
+    {
+      "id": 6,
+      "name": "Resident Evil Black Pants",
+      "category": "clothes",
+      "price": 180.00,
+      "stock": 150
+    },
+    {
+      "id": 7,
+      "name": "PS5 Pro White + 2 Controllers + 2 games",
+      "category": "games",
+      "price": 4000.00,
+      "stock": 30
+    },
+    {
+      "id": 8,
+      "name": "Uncharted 6 - A Thief reborn",
+      "category": "games",
+      "price": 50.00,
+      "stock": 200
+    },
+    {
+      "id": 9,
+      "name": "FIFA 80 - Special Edition",
+      "category": "games",
+      "price": 40.00,
+      "stock": 100
+    },
+    {
+      "id": 10,
+      "name": "Clean code: A handbook of agile software craftsmanship",
+      "category": "books",
+      "price": 20.00,
+      "stock": 1000
+    },
+    {
+      "id": 11,
+      "name": "Learning JavaScript Data Structures and Algorithms - Third Edition: Write complex and powerful JavaScript code using the latest ECMAScript",
+      "category": "books",
+      "price": 20.00,
+      "stock": 1000
+    },
+    {
+      "id": 12,
+      "name": "Smart Watch",
+      "category": "accessories",
+      "price": 80.00,
+      "stock": 400
+    },
+    {
+      "id": 13,
+      "name": "Earings Pretty Beauty",
+      "category": "accessories",
+      "price": 50.00,
+      "stock": 100
+    }
   ]
 }

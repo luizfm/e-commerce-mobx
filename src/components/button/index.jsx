@@ -1,11 +1,13 @@
 import React from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import styles from './styles.css'
 
 export const BUTTON_THEME = {
   TRANSPARENT: 'transparent',
+  LEAD_GRAY: 'lead-gray',
   YELLOW: 'yellow',
 }
 
@@ -15,17 +17,34 @@ const Button = ({
   onClick,
   theme,
   className,
+  to,
+  state,
   ...buttonProps
-}) => (
-  <button
-    className={classnames(styles.button, styles[theme], className)}
-    type={type || 'button'}
-    onClick={onClick}
-    {...buttonProps}
-  >
-    {children}
-  </button>
-)
+}) => {
+  if (to) {
+    return (
+      <Link
+        state={state}
+        className={classnames(styles.button, styles[theme], className)}
+        to={to}
+        rel="noopener noreferrer"
+      >
+        {children}
+      </Link>
+    )
+  }
+
+  return (
+    <button
+      className={classnames(styles.button, styles[theme], className)}
+      type={type || 'button'}
+      onClick={onClick}
+      {...buttonProps}
+    >
+      {children}
+    </button>
+  )
+}
 
 Button.propTypes = {
   type: PropTypes.string,
@@ -33,6 +52,8 @@ Button.propTypes = {
   className: PropTypes.string,
   onClick: PropTypes.func,
   children: PropTypes.node.isRequired,
+  to: PropTypes.string,
+  state: PropTypes.shape({}),
 }
 
 Button.defaultProps = {
@@ -40,6 +61,8 @@ Button.defaultProps = {
   className: '',
   onClick: () => {},
   theme: BUTTON_THEME.TRANSPARENT,
+  to: '',
+  state: {},
 }
 
 export default Button

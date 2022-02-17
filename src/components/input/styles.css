@@ -9,6 +9,17 @@
     line-height: 2rem;
     font-weight: 500;
     color: var(--gray-80);
+
+    &.hidden-label {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
   }
 
   .input-wrapper {

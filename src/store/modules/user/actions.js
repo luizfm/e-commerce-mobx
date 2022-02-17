@@ -1,5 +1,4 @@
 import cookies from 'react-cookies'
-import { StoreContext } from '_store'
 
 /* eslint-disable prettier/prettier */
 export const login =
