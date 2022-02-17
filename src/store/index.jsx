@@ -32,6 +32,19 @@ const StoreProvider = ({ children }) => {
       store.user.email = email
       store.user.authToken = accessToken
     },
+    products: [],
+    updateProductsList: (list) => {
+      const formattedList = list.reduce((acc, current) => {
+        if (store.products.some((item) => item.id === current.id)) {
+          return acc
+        }
+
+        return [...acc, current]
+      }, [])
+
+      store.products = [...store.products, ...formattedList]
+    },
+    currentCategoryList: (category) => store.products.filter((item) => item.category === category)
   }))
 
   return <StoreContext.Provider value={store}>{children}</StoreContext.Provider>

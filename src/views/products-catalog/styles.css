@@ -1,6 +1,5 @@
-.dashboard-container {
+.products-catalog-container {
   background-color: var(--background);
   height: calc(100vh - 8rem);
   overflow-y: auto;
-  width: 100%;
 }

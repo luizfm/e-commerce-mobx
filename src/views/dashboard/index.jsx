@@ -1,14 +1,17 @@
 import React, { useContext } from 'react'
+
 import { StoreContext } from '_store'
+import Sidebar from '_components/sidebar'
+
+import styles from './styles.css'
 
 const Dashboard = () => {
   const { user } = useContext(StoreContext)
-  console.log({ user })
   return (
-    <main>
+    <section className={styles['dashboard-container']}>
       <p>{user.email}</p>
       <p>{user.authToken}</p>
-    </main>
+    </section>
   )
 }
 

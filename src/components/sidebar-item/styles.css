@@ -1,0 +1,28 @@
+.sidebar-item-button {
+  height: 4rem;
+  width: 4rem;
+  fill: var(--gray-40);
+  padding: 0 0.6rem;
+  transition: all 0.5s;
+  background-color: white;
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+
+  &.button-open {
+    min-width: 16rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+
+    .icon {
+      margin-right: 1.2rem;
+    }
+  }
+}
+
+.icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
