@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   transition: all 0.2s ease-in-out;
+  border-right: 0.1rem solid var(--gray-8);
 
   &-open {
     width: 20rem;

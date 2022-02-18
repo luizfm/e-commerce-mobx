@@ -10,6 +10,15 @@ import ElectronicsIcon from '_assets/icons/electronics-icon.svg'
 import BooksIcon from '_assets/icons/books-icon.svg'
 import WatchIcon from '_assets/icons/watch-icon.svg'
 
+export const PRODUCTS_CATEGORIES = {
+  FURNITURE: 'furniture',
+  GAMES: 'games',
+  BOOKS: 'books',
+  ELECTRONICS: 'electronics',
+  CLOTHES: 'clothes',
+  ACCESSORIES: 'accessories',
+}
+
 export const ICONS_NAMES = {
   MENU: 'Menu',
   CART: 'Cart',
