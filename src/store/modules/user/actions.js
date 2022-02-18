@@ -34,5 +34,9 @@ export const signUp = ({ email, accessToken, ...payload }) => (store) => {
   return store.updateUser({ email, accessToken })
 }
 
-export const logout = () => (store) =>
-  store.updateUser({ email: '', accessToken: '' })
+export const logout = () => (store) => {
+  cookies.remove('email', { path: '/' })
+  cookies.remove('accessToken', { path: '/' })
+
+  return store.updateUser({ email: '', accessToken: '' })
+}

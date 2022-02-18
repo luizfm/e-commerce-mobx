@@ -1,0 +1,49 @@
+.user-menu-container {
+  .user-menu-wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 0.8rem;
+
+    .user-image {
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 0.2rem solid var(--background);
+    }
+
+    .user-info {
+      display: flex;
+      max-width: 10rem;
+      flex-direction: column;
+      justify-content: center;
+
+      .email {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+
+    .arrow-button {
+      cursor: pointer;
+
+      .menu-icon {
+        fill: var(--gray-40);
+        height: 1.6rem;
+        width: 1.6rem;
+      }
+    }
+  }
+
+  .menu-options {
+    position: absolute;
+    z-index: 99;
+    margin-top: 0.8rem;
+    background-color: white;
+    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12),
+      0 0.1rem 0.2rem rgba(0, 0, 0, 0.24);
+    border-radius: 0.4rem;
+    width: 18rem;
+  }
+}
