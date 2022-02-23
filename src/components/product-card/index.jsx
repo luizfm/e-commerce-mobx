@@ -1,13 +1,16 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useContext } from 'react'
 import PropTypes from 'prop-types'
 
 import Button from '_components/button'
 import MissingPicturePlaceHolder from '_assets/images/missing-picture.jpeg'
 
+import { StoreContext } from '_store/'
+import { observer } from 'mobx-react'
 import styles from './styles.css'
 import QuantifierInput from '../quantifier-input'
 
-const ProductCard = ({ name, price, image, stock }) => {
+const ProductCard = observer(({ product, name, price, image, stock }) => {
+  const store = useContext(StoreContext)
   const [quantity, setQuantity] = useState(0)
 
   const onIncrement = useCallback(() => {
@@ -34,6 +37,14 @@ const ProductCard = ({ name, price, image, stock }) => {
     setQuantity(Number(value))
   }, [])
 
+  const onAddProductToCart = useCallback(() => {
+    const productPayload = {
+      ...product,
+      quantity,
+    }
+    store.addProductToCart(productPayload)
+  }, [product, quantity, store])
+
   return (
     <article className={styles['product-card-container']}>
       <img
@@ -44,7 +55,7 @@ const ProductCard = ({ name, price, image, stock }) => {
       <h1 className={styles['product-name']}>{name}</h1>
       <p className={styles.price}>{`$${price.toFixed(2)}`}</p>
       <div className={styles['card-footer']}>
-        <Button>Add to cart</Button>
+        <Button onClick={onAddProductToCart}>Add to cart</Button>
         <QuantifierInput
           stock={stock}
           quantity={quantity}
@@ -55,9 +66,16 @@ const ProductCard = ({ name, price, image, stock }) => {
       </div>
     </article>
   )
-}
+})
 
 ProductCard.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    image: PropTypes.string,
+    stock: PropTypes.number.isRequired,
+  }).isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   image: PropTypes.string,

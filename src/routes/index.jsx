@@ -11,6 +11,7 @@ import StoreProvider from '_store/'
 import SignUp from '_views/sign-up'
 import Dashboard from '_views/dashboard'
 import ProductsCatalog from '_views/products-catalog'
+import Cart from '_views/cart'
 import App from '../App'
 
 const Routes = () => (
@@ -25,6 +26,7 @@ const Routes = () => (
           <Route path="/books" element={<ProductsCatalog />} />
           <Route path="/electronics" element={<ProductsCatalog />} />
           <Route path="/clothes" element={<ProductsCatalog />} />
+          <Route path="/cart" element={<Cart />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="sign-up" element={<SignUp />} />

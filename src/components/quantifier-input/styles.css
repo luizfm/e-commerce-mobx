@@ -1,6 +1,7 @@
 .quantifier-container {
   display: flex;
   align-items: center;
+  column-gap: 0.4rem;
 
   .quantity-input {
     width: 4rem;

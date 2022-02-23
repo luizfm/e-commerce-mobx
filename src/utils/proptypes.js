@@ -8,4 +8,14 @@ export const svgShape = PropTypes.oneOfType([
   }),
 ])
 
+export const productShape = PropTypes.shape({
+  id: PropTypes.number,
+  name: PropTypes.string,
+  category: PropTypes.string,
+  price: PropTypes.number,
+  stock: PropTypes.number,
+  image: PropTypes.string,
+  quantity: PropTypes.number,
+})
+
 export const anyShape = PropTypes.shape({})

@@ -14,6 +14,22 @@
   text-transform: none;
   text-decoration: none;
   color: var(--gray-80);
+
+  &:disabled {
+    background-color: var(--gray-4);
+    color: var(--gray-8);
+    cursor: not-allowed;
+    height: 4rem;
+    width: 4rem;
+  }
+
+  &.disabled {
+    background-color: var(--gray-4);
+    color: var(--gray-8);
+    cursor: not-allowed;
+    height: 4rem;
+    width: 4rem;
+  }
 }
 
 /* BUTTON THEMES */
