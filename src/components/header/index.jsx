@@ -5,11 +5,12 @@ import { SEARCH_ICON } from '_utils/constants'
 import EcommerceLogo from '_assets/images/logo.png'
 import { StoreContext } from '_store'
 import { observer } from 'mobx-react'
+import UserMenu from '_components/user-menu'
+import CartIconButton from '_components/cart-icon-button'
 import Button, { BUTTON_THEME } from '../button'
 import Input from '../input'
 
 import styles from './styles.css'
-import UserMenu from '../user-menu'
 
 const Header = observer(() => {
   const store = useContext(StoreContext)
@@ -34,6 +35,7 @@ const Header = observer(() => {
           icon={SEARCH_ICON.icon}
           className={styles['search-input']}
         />
+        <CartIconButton />
         {isUserLoggedIn ? (
           <UserMenu />
         ) : (

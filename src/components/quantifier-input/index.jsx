@@ -18,7 +18,7 @@ const QuantifierInput = ({
 
   return (
     <div className={styles['quantifier-container']}>
-      <Button onClick={onDecrement} disable={disableDecrement}>
+      <Button onClick={onDecrement} disabled={disableDecrement}>
         -
       </Button>
       <input
@@ -27,7 +27,7 @@ const QuantifierInput = ({
         onChange={onChange}
         value={quantity}
       />
-      <Button onClick={onIncrement} disable={disableIncrement}>
+      <Button onClick={onIncrement} disabled={disableIncrement}>
         +
       </Button>
     </div>

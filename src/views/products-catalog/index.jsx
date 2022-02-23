@@ -37,6 +37,7 @@ const ProductsCatalog = observer(() => {
       <div className={styles['product-catalog-list']}>
         {currentProductList.map((item) => (
           <ProductCard
+            product={item}
             key={item.id}
             name={item.name}
             price={item.price}

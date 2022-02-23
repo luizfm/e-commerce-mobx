@@ -19,15 +19,22 @@ const Button = ({
   className,
   to,
   state,
+  disabled,
   ...buttonProps
 }) => {
-  if (to) {
+  if (to && !disabled) {
     return (
       <Link
         state={state}
-        className={classnames(styles.button, styles[theme], className)}
+        className={classnames(
+          styles.button,
+          styles[theme],
+          { [styles.disabled]: disabled },
+          className
+        )}
         to={to}
         rel="noopener noreferrer"
+        {...buttonProps}
       >
         {children}
       </Link>
@@ -39,6 +46,7 @@ const Button = ({
       className={classnames(styles.button, styles[theme], className)}
       type={type || 'button'}
       onClick={onClick}
+      disabled={disabled}
       {...buttonProps}
     >
       {children}
@@ -50,6 +58,7 @@ Button.propTypes = {
   type: PropTypes.string,
   theme: PropTypes.oneOf(Object.values(BUTTON_THEME)),
   className: PropTypes.string,
+  disabled: PropTypes.bool,
   onClick: PropTypes.func,
   children: PropTypes.node.isRequired,
   to: PropTypes.string,
@@ -59,6 +68,7 @@ Button.propTypes = {
 Button.defaultProps = {
   type: 'button',
   className: '',
+  disabled: false,
   onClick: () => {},
   theme: BUTTON_THEME.TRANSPARENT,
   to: '',

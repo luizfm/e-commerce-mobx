@@ -7,7 +7,7 @@
 
   .header-content {
     display: grid;
-    grid-template-columns: 23rem 1fr auto;
+    grid-template-columns: 23rem 1fr auto auto;
     column-gap: 3.2rem;
     align-items: center;
     width: 111.24rem;

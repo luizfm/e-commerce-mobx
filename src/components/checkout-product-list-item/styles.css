@@ -1,0 +1,30 @@
+.checkout-product-item-container {
+  display: flex;
+  align-items: center;
+  column-gap: 3.2rem;
+  padding: 1.2rem 0;
+  border-bottom: 0.1rem solid var(--gray-8);
+  font-size: 1.4rem;
+  line-height: 2rem;
+
+  .product-image {
+    height: 8rem;
+    width: 8rem;
+    object-fit: cover;
+  }
+
+  .product-description {
+    flex: 1;
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  .product-subtotal,
+  .product-quantity,
+  .product-price {
+    width: 12rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
