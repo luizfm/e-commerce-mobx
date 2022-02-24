@@ -13,17 +13,18 @@ const htmlPlugin = new HtmlWebPackPlugin({
 
 module.exports = {
   mode: isDevelopment ? 'development' : 'production',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-  },
   devServer: {
+    historyApiFallback: true,
     static: {
       directory: path.join(__dirname, 'public'),
     },
-    historyApiFallback: true,
     compress: true,
     port: 3000,
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/', // Public path is necessary to be able to use multiple paths e.g /foo/bar/:doeId
   },
   devtool: 'source-map',
   module: {
