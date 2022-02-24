@@ -6,7 +6,6 @@ import Button, { BUTTON_THEME } from '_components/button'
 import api from '_services/api'
 import { observer } from 'mobx-react-lite'
 import { StoreContext } from '_providers/store-provider'
-import { login } from '_store/modules/user/actions'
 
 import styles from './styles.css'
 
