@@ -19,7 +19,6 @@ import Sidebar from '_components/sidebar'
 import styles from './styles.css'
 
 const App = () => {
-  const authToken = cookies.load('accessToken')
   const navigate = useNavigate()
   const location = useLocation()
 

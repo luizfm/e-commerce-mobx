@@ -1,5 +1,6 @@
 import React, { useCallback, useMemo, useState } from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
 import Button from '../button'
 import Input from '../input'
@@ -12,12 +13,13 @@ const QuantifierInput = ({
   onIncrement,
   onDecrement,
   onChange,
+  className,
 }) => {
   const disableIncrement = useMemo(() => stock === quantity, [quantity, stock])
   const disableDecrement = useMemo(() => quantity === 0, [quantity])
 
   return (
-    <div className={styles['quantifier-container']}>
+    <div className={classnames(styles['quantifier-container'], className)}>
       <Button onClick={onDecrement} disabled={disableDecrement}>
         -
       </Button>
@@ -40,12 +42,14 @@ QuantifierInput.propTypes = {
   onIncrement: PropTypes.func,
   onDecrement: PropTypes.func,
   onChange: PropTypes.func,
+  className: PropTypes.string,
 }
 
 QuantifierInput.defaultProps = {
   onIncrement: () => {},
   onDecrement: () => {},
   onChange: () => {},
+  className: '',
 }
 
 export default QuantifierInput
