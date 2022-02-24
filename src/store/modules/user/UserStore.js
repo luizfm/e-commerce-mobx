@@ -1,4 +1,5 @@
 import { makeAutoObservable } from 'mobx'
+import cookies from 'react-cookies'
 
 class UserStore {
   email
@@ -19,6 +20,14 @@ class UserStore {
 
     this.email = email
     this.authToken = accessToken
+  }
+
+  logoutUser() {
+    this.email = ''
+    this.authToken = ''
+
+    cookies.remove('accessToken', { path: '/' })
+    cookies.remove('user', { path: '/' })
   }
 }
 

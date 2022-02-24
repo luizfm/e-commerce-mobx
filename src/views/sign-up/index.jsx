@@ -5,7 +5,6 @@ import api from '_services/api'
 import Button, { BUTTON_THEME } from '_components/button'
 import Input, { INPUT_TYPES } from '_components/input'
 import { StoreContext } from '_providers/store-provider'
-import { signUp } from '_store/modules/user/actions'
 
 import { reducer, UPDATE_STATE, INITIAL_STATE } from './reducer'
 import styles from './styles.css'
@@ -19,7 +18,7 @@ const INPUT_IDS = {
 }
 
 const SignUp = () => {
-  const store = useContext(StoreContext)
+  const { userStore } = useContext(StoreContext)
   const [state, localDispatch] = useReducer(reducer, INITIAL_STATE)
   const navigate = useNavigate()
 
@@ -58,15 +57,15 @@ const SignUp = () => {
       const response = await api.post('/register', payload)
       const { accessToken, user } = response.data
 
-      signUp({ email: user.email, accessToken })(store)
+      userStore.authenticateUser({ email: user.email, accessToken })
 
       navigate('/dashboard')
     } catch (err) {
       console.log(err)
     }
-  }, [navigate, state, store])
+  }, [navigate, state, userStore])
 
-  if (store.userStore.authToken) {
+  if (userStore.authToken) {
     return <Navigate to="/dashboard" />
   }
 

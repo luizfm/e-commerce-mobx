@@ -6,7 +6,6 @@ import { StoreContext } from '_providers/store-provider'
 import UserPlaceholder from '_assets/images/user-placeholder.png'
 import UserMenuItem from '_components/user-menu-item'
 import ArrowDownIcon from '_assets/icons/arrow-down-icon.svg'
-import { logout } from '_store/modules/user/actions'
 import Svg from '_components/svg'
 
 import styles from './styles.css'
@@ -36,7 +35,7 @@ const USER_MENU_ITEMS = [
 ]
 
 const UserMenu = () => {
-  const store = useContext(StoreContext)
+  const { userStore } = useContext(StoreContext)
 
   const navigate = useNavigate()
   const onSelection = useCallback(
@@ -50,9 +49,9 @@ const UserMenu = () => {
         return
       }
 
-      logout()(store)
+      userStore.logoutUser()
     },
-    [navigate, store]
+    [navigate, userStore]
   )
 
   return (
@@ -64,11 +63,11 @@ const UserMenu = () => {
         <img
           className={styles['user-image']}
           src={UserPlaceholder}
-          alt={`${store.userStore.name}'s portrait`}
+          alt={`${userStore.name}'s portrait`}
         />
         <div className={styles['user-info']}>
-          <p>{store.userStore.name}</p>
-          <p className={styles.email}>{store.userStore.email}</p>
+          <p>{userStore.name}</p>
+          <p className={styles.email}>{userStore.email}</p>
         </div>
         <Button className={styles['arrow-button']}>
           <Svg className={styles['menu-icon']} icon={ArrowDownIcon} />
