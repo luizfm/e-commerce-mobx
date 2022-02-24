@@ -1,7 +1,6 @@
 import React, { useCallback, useContext, useEffect, useMemo } from 'react'
 import { useLocation } from 'react-router-dom'
-import { StoreContext } from '_store'
-import { updateProductsList } from '_store/modules/product/actions'
+import { StoreContext } from '_providers/store-provider'
 import api from '_services/api'
 
 import { observer } from 'mobx-react'
@@ -18,15 +17,16 @@ const ProductsCatalog = observer(() => {
     [location.pathname]
   )
 
-  const currentProductList = store.currentCategoryList(formattedPathName)
+  const currentProductList =
+    store.productsStore.currentCategoryList(formattedPathName)
 
   const getProductsList = useCallback(async () => {
     const response = await api.get('/products', {
       params: { category: formattedPathName },
     })
 
-    updateProductsList(response.data)(store)
-  }, [formattedPathName, store])
+    store.productsStore.updateProductsList(response.data)
+  }, [formattedPathName, store.productsStore])
 
   useEffect(() => {
     getProductsList()

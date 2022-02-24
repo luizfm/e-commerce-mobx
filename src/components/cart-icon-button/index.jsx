@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react'
 import React, { useContext } from 'react'
-import { StoreContext } from '_store'
+import { StoreContext } from '_providers/store-provider'
 
 import ShoppingCartIcon from '_assets/icons/shopping-cart-icon.svg'
 import IconButton from '_components/icon-button'
@@ -8,8 +8,7 @@ import IconButton from '_components/icon-button'
 import styles from './styles.css'
 
 const CartIconButton = observer(() => {
-  const store = useContext(StoreContext)
-  const { cart } = store
+  const { cartStore } = useContext(StoreContext)
 
   return (
     <div className={styles['cart-icon-button-container']}>
@@ -19,7 +18,7 @@ const CartIconButton = observer(() => {
         iconClassName={styles['cart-icon']}
         icon={ShoppingCartIcon}
       />
-      <span className={styles['cart-quantity']}>{cart.length}</span>
+      <span className={styles['cart-quantity']}>{cartStore.cart?.length}</span>
     </div>
   )
 })

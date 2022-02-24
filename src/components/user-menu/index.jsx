@@ -2,7 +2,7 @@ import React, { useCallback, useContext } from 'react'
 import { Wrapper, Button, Menu } from 'react-aria-menubutton'
 import { useNavigate } from 'react-router-dom'
 
-import { StoreContext } from '_store'
+import { StoreContext } from '_providers/store-provider'
 import UserPlaceholder from '_assets/images/user-placeholder.png'
 import UserMenuItem from '_components/user-menu-item'
 import ArrowDownIcon from '_assets/icons/arrow-down-icon.svg'
@@ -37,6 +37,7 @@ const USER_MENU_ITEMS = [
 
 const UserMenu = () => {
   const store = useContext(StoreContext)
+
   const navigate = useNavigate()
   const onSelection = useCallback(
     (value, event) => {
@@ -63,11 +64,11 @@ const UserMenu = () => {
         <img
           className={styles['user-image']}
           src={UserPlaceholder}
-          alt={`${store.user.name}'s portrait`}
+          alt={`${store.userStore.name}'s portrait`}
         />
         <div className={styles['user-info']}>
-          <p>{store.user.name}</p>
-          <p className={styles.email}>{store.user.email}</p>
+          <p>{store.userStore.name}</p>
+          <p className={styles.email}>{store.userStore.email}</p>
         </div>
         <Button className={styles['arrow-button']}>
           <Svg className={styles['menu-icon']} icon={ArrowDownIcon} />

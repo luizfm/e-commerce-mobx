@@ -4,13 +4,13 @@ import PropTypes from 'prop-types'
 import Button from '_components/button'
 import MissingPicturePlaceHolder from '_assets/images/missing-picture.jpeg'
 
-import { StoreContext } from '_store/'
+import { StoreContext } from '_providers/store-provider'
 import { observer } from 'mobx-react'
 import styles from './styles.css'
 import QuantifierInput from '../quantifier-input'
 
 const ProductCard = observer(({ product, name, price, image, stock }) => {
-  const store = useContext(StoreContext)
+  const { cartStore } = useContext(StoreContext)
   const [quantity, setQuantity] = useState(0)
 
   const onIncrement = useCallback(() => {
@@ -42,8 +42,8 @@ const ProductCard = observer(({ product, name, price, image, stock }) => {
       ...product,
       quantity,
     }
-    store.addProductToCart(productPayload)
-  }, [product, quantity, store])
+    cartStore.addProductToCart(productPayload)
+  }, [product, cartStore, quantity])
 
   return (
     <article className={styles['product-card-container']}>

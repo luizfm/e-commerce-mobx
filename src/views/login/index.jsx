@@ -5,7 +5,7 @@ import Input, { INPUT_TYPES } from '_components/input'
 import Button, { BUTTON_THEME } from '_components/button'
 import api from '_services/api'
 import { observer } from 'mobx-react-lite'
-import { StoreContext } from '_store/'
+import { StoreContext } from '_providers/store-provider'
 import { login } from '_store/modules/user/actions'
 
 import styles from './styles.css'
@@ -16,7 +16,7 @@ const INPUT_IDS = {
 }
 
 const Login = observer(() => {
-  const store = useContext(StoreContext)
+  const { userStore } = useContext(StoreContext)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [emailError, setEmailError] = useState('')
@@ -39,16 +39,16 @@ const Login = observer(() => {
       const response = await api.post('/login', { email, password })
       const { accessToken, user } = response.data
 
-      login({ email, accessToken })(store)
+      userStore.authenticateUser({ email: user.email, accessToken })
 
       navigate('/dashboard')
     } catch (err) {
       setEmailError('Email or password incorrect')
       setPasswordError('Email or password incorrect')
     }
-  }, [email, navigate, password, store])
+  }, [email, navigate, password, userStore])
 
-  if (store?.user?.authToken) {
+  if (userStore?.authToken) {
     return <Navigate to="/dashboard" />
   }
 

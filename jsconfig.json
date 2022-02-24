@@ -13,6 +13,7 @@
       "_hooks/*": ["src/hooks"],
       "_services/*": ["src/services"],
       "_store/*": ["src/store"],
+      "_providers/*": ["src/providers"]
     },
   },
   "exclude": ["node_modules", "dist", "dist-server"]

@@ -4,18 +4,18 @@ import { useDebouncedCallback } from 'use-debounce'
 
 import { productShape } from '_utils/proptypes'
 import QuantifierInput from '_components/quantifier-input'
-import { StoreContext } from '_store'
+import { StoreContext } from '_providers/store-provider'
 
 import { observer } from 'mobx-react'
 import styles from './styles.css'
 
 const CheckoutProductListItem = observer(({ product }) => {
-  const { updateCartProductQuantity, cart } = useContext(StoreContext)
+  const { cartStore } = useContext(StoreContext)
   const [quantity, setQuantity] = useState(product.quantity)
 
   const updateCart = useCallback(() => {
-    updateCartProductQuantity(product, quantity)
-  }, [product, quantity, updateCartProductQuantity])
+    cartStore.updateCartProductQuantity(product, quantity)
+  }, [cartStore, product, quantity])
 
   const debounceUpdateQuantity = useDebouncedCallback(updateCart, 500)
 
