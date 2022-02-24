@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'
 import Login from '_views/login'
 
-import StoreProvider from '_store/'
+import StoreProvider from '_providers/store-provider'
 
 import SignUp from '_views/sign-up'
 import Dashboard from '_views/dashboard'

@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react'
 import React, { useContext, useMemo } from 'react'
 
-import { StoreContext } from '_store'
+import { StoreContext } from '_providers/store-provider'
 import Button, { BUTTON_THEME } from '_components/button'
 
 import EmptyCart from '_components/empty-cart'
@@ -9,9 +9,12 @@ import CheckoutProductList from '_components/checkout-product-list'
 import styles from './styles.css'
 
 const Cart = observer(() => {
-  const { cart } = useContext(StoreContext)
+  const { cartStore } = useContext(StoreContext)
 
-  const disablePaymentButton = useMemo(() => cart.length === 0, [cart.length])
+  const disablePaymentButton = useMemo(
+    () => cartStore.cart.length === 0,
+    [cartStore.cart.length]
+  )
 
   return (
     <section className={styles['cart-container']}>
@@ -21,7 +24,7 @@ const Cart = observer(() => {
           Below you&apos;re going to find the items on your cart. Please, check
           them and if everything is okay, proceed to payment!
         </p>
-        {cart.length > 0 ? <CheckoutProductList /> : <EmptyCart />}
+        {cartStore.cart.length > 0 ? <CheckoutProductList /> : <EmptyCart />}
         <Button
           disabled={disablePaymentButton}
           theme={BUTTON_THEME.LEAD_GRAY}

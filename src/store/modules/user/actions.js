@@ -15,7 +15,7 @@ export const login =
       path: '/'
     })
 
-    return store.updateUser({ email, accessToken })
+    return store.userStore.authenticateUser({ email, accessToken })
   }
 
 export const signUp = ({ email, accessToken, ...payload }) => (store) => {
@@ -31,12 +31,12 @@ export const signUp = ({ email, accessToken, ...payload }) => (store) => {
     path: '/'
   })
 
-  return store.updateUser({ email, accessToken })
+  return store.userStore.authenticateUser({ email, accessToken })
 }
 
 export const logout = () => (store) => {
   cookies.remove('email', { path: '/' })
   cookies.remove('accessToken', { path: '/' })
 
-  return store.updateUser({ email: '', accessToken: '' })
+  return store.userStore.authenticateUser({ email: '', accessToken: '' })
 }

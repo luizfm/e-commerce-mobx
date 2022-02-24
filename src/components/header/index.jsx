@@ -3,7 +3,7 @@ import classnames from 'classnames'
 
 import { SEARCH_ICON } from '_utils/constants'
 import EcommerceLogo from '_assets/images/logo.png'
-import { StoreContext } from '_store'
+import { StoreContext } from '_providers/store-provider'
 import { observer } from 'mobx-react'
 import UserMenu from '_components/user-menu'
 import CartIconButton from '_components/cart-icon-button'
@@ -16,8 +16,8 @@ const Header = observer(() => {
   const store = useContext(StoreContext)
 
   const isUserLoggedIn = useMemo(
-    () => store.user.authToken,
-    [store.user.authToken]
+    () => store.userStore?.authToken,
+    [store.userStore?.authToken]
   )
 
   return (

@@ -7,7 +7,7 @@ import React, {
   useState,
 } from 'react'
 
-import { StoreContext } from '_store'
+import { StoreContext } from '_providers/store-provider'
 import Sidebar from '_components/sidebar'
 import ShoppingVideo from '_assets/videos/shopping-gray.mp4'
 import ShowCase from '_components/showcase'

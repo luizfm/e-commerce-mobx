@@ -4,7 +4,7 @@ import { Navigate, useNavigate } from 'react-router-dom'
 import api from '_services/api'
 import Button, { BUTTON_THEME } from '_components/button'
 import Input, { INPUT_TYPES } from '_components/input'
-import { StoreContext } from '_store'
+import { StoreContext } from '_providers/store-provider'
 import { signUp } from '_store/modules/user/actions'
 
 import { reducer, UPDATE_STATE, INITIAL_STATE } from './reducer'
@@ -66,7 +66,7 @@ const SignUp = () => {
     }
   }, [navigate, state, store])
 
-  if (store.user.authToken) {
+  if (store.userStore.authToken) {
     return <Navigate to="/dashboard" />
   }
 
