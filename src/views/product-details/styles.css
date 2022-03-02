@@ -10,7 +10,7 @@
     max-width: 111.24rem;
     margin: 0 auto;
     display: grid;
-    grid-template: repeat(5, auto) / 20rem auto minmax(12rem, 1fr);
+    grid-template: repeat(5, auto) / 20rem auto 12rem;
     grid-template-areas:
       'image product-name product-name'
       'image description description'

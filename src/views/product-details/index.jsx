@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import api from '_services/api'
 
@@ -7,16 +7,23 @@ import MissingPicturePlaceHolder from '_assets/images/missing-picture.jpeg'
 import QuantifierInput from '_components/quantifier-input'
 import useQuantifier from '_hooks/use-quantifier'
 import Button, { BUTTON_THEME } from '_components/button'
+import { StoreContext } from '_providers/store-provider'
+
 import styles from './styles.css'
 
 const ProductDetails = () => {
   const { productId } = useParams()
+  const { cartStore } = useContext(StoreContext)
   const [product, setProduct] = useState({})
   const [quantity, onIncrement, onDecrement, onChange] = useQuantifier()
 
   const onAddToCart = useCallback(() => {
-    // TODO - integrate when ready
-  }, [])
+    const formattedProduct = {
+      ...product,
+      quantity,
+    }
+    cartStore.addProductToCart(formattedProduct)
+  }, [cartStore, product, quantity])
 
   useEffect(() => {
     async function getProduct() {
