@@ -6,6 +6,7 @@ import MissingPicturePlaceHolder from '_assets/images/missing-picture.jpeg'
 
 import { StoreContext } from '_providers/store-provider'
 import { observer } from 'mobx-react'
+import { Link } from 'react-router-dom'
 import styles from './styles.css'
 import QuantifierInput from '../quantifier-input'
 
@@ -64,6 +65,7 @@ const ProductCard = observer(({ product, name, price, image, stock }) => {
           onChange={onChange}
         />
       </div>
+      <Link className={styles['product-link']} to={`/product/${product.id}`} />
     </article>
   )
 })
