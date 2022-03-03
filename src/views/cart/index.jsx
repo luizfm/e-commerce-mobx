@@ -25,14 +25,6 @@ const Cart = observer(() => {
           them and if everything is okay, proceed to payment!
         </p>
         {cartStore.cart.length > 0 ? <CheckoutProductList /> : <EmptyCart />}
-        <Button
-          disabled={disablePaymentButton}
-          theme={BUTTON_THEME.LEAD_GRAY}
-          to="/cart/payment"
-          className={styles['payment-button']}
-        >
-          Payment
-        </Button>
       </div>
     </section>
   )

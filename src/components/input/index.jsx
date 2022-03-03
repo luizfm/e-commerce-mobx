@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import InputMask from 'react-input-mask'
 
 import { svgShape } from '_utils/proptypes'
 import LockIcon from '_assets/icons/lock-icon.svg'
@@ -65,7 +66,7 @@ export default function Input({
           [styles['input-error']]: !!error,
         })}
       >
-        <input
+        <InputMask
           id={id}
           type={handleInputType}
           {...inputProps}
