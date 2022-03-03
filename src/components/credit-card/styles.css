@@ -1,0 +1,28 @@
+.credit-card-container {
+  width: 32rem;
+  height: 19rem;
+  padding: 2.4rem;
+  background-color: var(--card-color);
+  border-radius: 0.8rem;
+  font-family: 'Space Mono';
+  color: var(--gray-8);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+
+  .card-logo {
+    position: absolute;
+    top: 2.4rem;
+    right: 2.4rem;
+    height: 3rem;
+    object-fit: cover;
+  }
+
+  .card-data {
+    font-size: 1.2rem;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    column-gap: 1.2rem;
+  }
+}

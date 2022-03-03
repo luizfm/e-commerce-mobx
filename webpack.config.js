@@ -1,10 +1,15 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 const miniCssPlugin = new MiniCssExtractPlugin()
+
+const processPlugin = new webpack.DefinePlugin({
+  'process.env.STRIPE_PUBLISHABLE_KEY': JSON.stringify('development'),
+})
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: '/public/index.html',
@@ -81,5 +86,5 @@ module.exports = {
       _providers: path.resolve(__dirname, 'src/providers'),
     },
   },
-  plugins: [htmlPlugin, miniCssPlugin],
+  plugins: [htmlPlugin, miniCssPlugin, processPlugin],
 }

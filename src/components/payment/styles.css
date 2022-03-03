@@ -1,0 +1,49 @@
+.payment-container {
+  max-width: 111.24rem;
+  border-radius: 0.8rem;
+  background-color: white;
+  margin: 6.4rem auto;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: var(--gray-80);
+
+  .card-setup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3.2rem;
+    align-items: center;
+    margin-top: 3.2rem;
+
+    .card-form {
+      display: grid;
+      grid-template: auto auto / 1fr 1fr;
+      grid-template-areas: 'card-number card-name' 'expires cvc';
+      gap: 3.2rem;
+
+      .card-number {
+        grid-area: card-number;
+      }
+
+      .card-name {
+        grid-area: card-name;
+      }
+
+      .card-expires {
+        grid-area: expires;
+      }
+
+      .card-cvc {
+        grid-area: cvc;
+      }
+    }
+
+    .credit-card {
+      justify-self: center;
+    }
+  }
+
+  .confirm-payment-button {
+    width: 15rem;
+    margin: 4.8rem auto 0;
+  }
+}

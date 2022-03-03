@@ -53,6 +53,10 @@ class CartStore {
       return total
     }, 0)
   }
+
+  clearCart() {
+    this.cart = []
+  }
 }
 
 export default CartStore

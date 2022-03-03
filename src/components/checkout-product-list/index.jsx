@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '_providers/store-provider'
 import CheckoutProductListItem from '_components/checkout-product-list-item'
+import Payment from '_components/payment'
 
 import { observer } from 'mobx-react'
 import styles from './styles.css'
@@ -24,6 +25,7 @@ const CheckoutProductList = observer(() => {
         ))}
       </ul>
       <p className={styles.total}>Total: ${cartStore.cartTotal()}</p>
+      <Payment />
     </div>
   )
 })
